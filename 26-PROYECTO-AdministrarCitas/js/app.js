@@ -2,8 +2,10 @@
 const pacienteInput = document.querySelector('#paciente');
 const propietarioInput = document.querySelector('#propietario');
 const emailInput = document.querySelector('#email');
+const phoneInput = document.querySelector('#phone');
 const fechaInput = document.querySelector('#fecha');
 const sintomasInput = document.querySelector('#sintomas');
+
 
 const formulario = document.querySelector('#formulario-cita');
 const formularioInput = document.querySelector('#formulario-cita input[type="submit"]');
@@ -14,6 +16,7 @@ const contenedorCitas = document.querySelector('#citas');
 pacienteInput.addEventListener('change', datosCita);
 propietarioInput.addEventListener('change', datosCita);
 emailInput.addEventListener('change', datosCita);
+phoneInput.addEventListener('change', datosCita);
 fechaInput.addEventListener('change', datosCita);
 sintomasInput.addEventListener('change', datosCita);
 
@@ -27,6 +30,7 @@ const citaObj = {
     paciente:'',
     propietario:'',
     email:"",
+    phone:'',
     fecha:'',
     sintomas:''
 }
@@ -112,6 +116,9 @@ class AdminCitas {
             const email = document.createElement('P');
             email.classList.add('dond-normal', 'mb-3', 'text-gray-700', 'normal-case');
             email.innerHTML = `<span class = 'font-bold' uppercase>Email:</span> ${cita.email}`;
+            const phone = document.createElement('P');
+            phone.classList.add('dond-normal', 'mb-3', 'text-gray-700', 'normal-case');
+            phone.innerHTML = `<span class = 'font-bold' uppercase>Telefono:</span> ${cita.phone}`;
             const fecha = document.createElement('P');
             fecha.classList.add('dond-normal', 'mb-3', 'text-gray-700', 'normal-case');
             fecha.innerHTML = `<span class = 'font-bold' uppercase>Fecha:</span> ${cita.fecha}`;
@@ -144,6 +151,7 @@ class AdminCitas {
             divCita.appendChild(paciente);
             divCita.appendChild(propietario);
             divCita.appendChild(email);
+            divCita.appendChild(phone);
             divCita.appendChild(fecha);
             divCita.appendChild(sintomas);
             divCita.appendChild(contenedorBotones);
@@ -210,6 +218,7 @@ function reiniciarObjetoCita() {
         paciente:'',
         propietario:'',
         email:"",
+        phone:'',
         fecha:'',
         sintomas:''
     })
@@ -225,6 +234,7 @@ function cargarEditor(cita) {
     pacienteInput.value = cita.paciente
     propietarioInput.value = cita.propietario
     emailInput.value = cita.email
+    phoneInput.value = cita.phone
     fechaInput.value = cita.fecha
     sintomasInput.value = cita.sintomas
 
