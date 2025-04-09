@@ -107,7 +107,7 @@ class AdminCitas {
             divCita.classList.add('mx-5','my-10','bg-white','shadow-md','px-5','py-10','rounded-xl');
 
             const paciente = document.createElement('P');
-            paciente.classList.add('dond-normal', 'mb-3', 'text-gray-700', 'normal-case');
+            p5aciente.classList.add('dond-normal', 'mb-3', 'text-gray-700', 'normal-case');
             paciente.innerHTML = `<span class = 'font-bold' uppercase>
             Paciente:</span> ${cita.paciente}`;
             const propietario = document.createElement('P');
